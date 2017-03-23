@@ -4,12 +4,18 @@
  * and open the template in the editor.
  */
 package Animal;
-
+import Indices.*;
 /**
  *
  * @author User
  */
 public abstract class Animal {
+  /** @brief Constructor tanpa parameter dari Hewan
+    * Menghidupkan hewan
+    */
+  public Animal() {
+    
+  }
   /** @brief Constructor dari Hewan
     * Menghidupkan hewan
     *
@@ -28,6 +34,9 @@ public abstract class Animal {
     water_animal = water;
     air_animal = air;
     jinak = kejinakan;
+    koordinat = new Indices();
+    koordinat.SetAbsis(x);
+    koordinat.SetOrdinat(y);
   }
   /** @brief prosedur virtual interact dari hewan
     * I.S hewan telah dihidupkan
@@ -39,7 +48,7 @@ public abstract class Animal {
     * Mengembalikan nilai integer berat dari hewan
     * @return int
     */
-  public int GetBerat() {
+  public final int GetBerat() {
     return berat_badan;
   }
   /** @brief Prosedur SetBerat  dari hewan
@@ -49,17 +58,15 @@ public abstract class Animal {
     *
     * @param bb integer menyatakan input berat badan yang ingin di set
     */
-  public void SetBerat(int bb) {
+  public final void SetBerat(int bb) {
     berat_badan = bb;
   }
   /** @brief GetKoordinat dari hewan
     * Mengembalikan nilai Indices ordinat hewan
     */
-  /*
   public Indices GetKoordinat() {
     return koordinat;
   }
-  */
   /** @brief Prosedur SetKoordinat  dari hewan
     * I.S x dan y adalah koordinat yang valid pada zoo
     * F.S atribut koordinat hewan memiliki absis x dan ordinat y
@@ -77,25 +84,25 @@ public abstract class Animal {
   /** @brief Mengembalikan nilai booleanean apakah hewan dapat hidup di Land
     * @return boolean
     */
-  public boolean IsLandAnimal() {
+  public final boolean IsLandAnimal() {
     return land_animal;
   }
   /** @brief Mengembalikan nilai booleanean apakah hewan dapat hidup di Water
     * @return boolean
     */
-  public boolean IsWaterAnimal() {
+  public final boolean IsWaterAnimal() {
     return water_animal;
   }
   /** @brief Mengembalikan nilai booleanean apakah hewan dapat hidup di Air
     * @return boolean 
     */ 
-  public boolean IsAirAnimal() {
+  public final boolean IsAirAnimal() {
     return air_animal;
   }
   /** @brief Mengembalikan nilai booleanean apakah hewan jinak
     * @return boolean 
     */
-  public boolean IsJinak() {
+  public final boolean IsJinak() {
     return jinak;
   }
   /** @brief Mengembalikan nilai booleanean apakah hewan dapat tinggal pada Cell C
@@ -117,7 +124,7 @@ public abstract class Animal {
   /** @brief Mengembalikan nilai integer keterangan makanan hewan
     * @return int
     */
-  public int GetMakanan() {
+  public final int GetMakanan() {
     return makanan;
   }
   /** @brief Atribut berat_badan  menyatakan berapa berat hewan tersebut
@@ -125,7 +132,7 @@ public abstract class Animal {
   protected int berat_badan;
   /** @brief Atribut koordinat  adalah letak dimana hewan berada
     */
-  //protected Indices koordinat;
+  protected Indices koordinat;
   /** @brief Atribut makanan adalah keterangan klasifikasi hewan berdasarkan makanan dimana Herbivore=0, Omnivore=1, Carnivore=2
     */
   protected int makanan;
