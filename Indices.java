@@ -24,8 +24,8 @@ public class Indices {
     * @param y integer adalah ordinat yang akan di set
     */
   public Indices(int absis, int ordinat) {
-    this.x = x;
-    this.y = y;
+    this.x = absis;
+    this.y = ordinat;
   }
   /** @brief Operator overloading = dari Indices
     * Memastikan bukan bitewise copy
