@@ -35,5 +35,4 @@ public class RenderableTest implements Renderable{
 	public void testRender() {
 		assertEquals("Method render Error!",test,render());
 	}
-
 }
